@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.musicshow.audiofx"
+	android:versionCode="400"
+	android:versionName="4.0.0"
+	platformBuildVersionCode="22"
+	platformBuildVersionName="5.1.1">
+	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_ALL_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_MEDIA_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+	<uses-permission android:name="android.permission.LOOP_RADIO" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.CAPTURE_AUDIO_HOTWORD" />
+	<uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+    <!-- 更改您的音频设置 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	<uses-permission android:name="android.permission.MANAGE_VOICE_KEYPHRASES" />
+    <!-- 此应用可显示在其他应用上方 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+	<uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
+	<!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+	-->
+
+	<uses-sdk
+		android:minSdkVersion="8"
+		android:targetSdkVersion="32"/>
+
+	<application
+		android:largeHeap="true"
+		android:allowBackup="true"
+		android:icon="@drawable/ic_launcher"
+		android:theme="@style/AppTheme"
+		android:label="音频可视化"
+		android:hardwareAccelerated="true">
+		<activity
+			android:screenOrientation="portrait"
+			android:label="音频可视化"
+			android:theme="@style/AppTheme"
+			android:name="com.musicshow.audiofx.MainActivity"
+			android:hardwareAccelerated="true">
+			<intent-filter >
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	</application>
+</manifest>
