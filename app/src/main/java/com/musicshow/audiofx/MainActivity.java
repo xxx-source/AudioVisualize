@@ -58,7 +58,8 @@ public class MainActivity extends android.app.Activity implements android.view.V
 				((android.widget.CompoundButton) findViewById(R.id.EnableSurfaceView)).setChecked(Check);
 				if(WindowManager == null)
 					CreateWindow(Check);
-				CreateScreen = 1;
+				if(WindowManager != null)
+					CreateScreen = 1;
 			}
 			//======End======
 			//======Start 设置 Fft 属性======
@@ -339,9 +340,20 @@ public class MainActivity extends android.app.Activity implements android.view.V
 			for (int Index = 0; Index < GrantResults.length; Index++)
 			{
 				if(GrantResults[Index] == android.content.pm.PackageManager.PERMISSION_GRANTED)
-				{
 					android.widget.Toast.makeText(MainActivity.this, "有以下权限还未授权：" + Permissions[Index], 0).show();
-					AskPermission();
+				else
+				{
+					if(Permissions[Index] == android.Manifest.permission.SYSTEM_ALERT_WINDOW)
+					{
+						if(CreateScreen == -1)
+						{
+							if(WindowManager != null)
+							{
+								CreateWindow(((android.widget.CompoundButton) findViewById(R.id.EnableSurfaceView)).isChecked());
+								CreateScreen = 1;
+							}
+						}
+					}
 				}
 			}
 		}
