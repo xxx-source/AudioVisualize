@@ -326,7 +326,7 @@ public class MainActivity extends android.app.Activity implements android.view.V
 					Permissions.add(Index);
 			}
 			if (!Permissions.isEmpty())
-				requestPermissions(Permissions.toArray(new String[Permissions.size()]), 666);
+				requestPermissions(Permissions.toArray(new String[Permissions.size() + 1]), 666);
 		}
 		return true;
 	}

@@ -1049,8 +1049,7 @@ public class Fft
 			DrawRng = Rng / 2;
 			LastDrawRng = DrawRng;
 		}
-		else
-		if(Rng > DrawRng)
+		else if(Rng > DrawRng)
 		{
 			DrawRngRate = (Rng - DrawRng) / 4;
 			DrawRng += DrawRngRate;
@@ -1073,8 +1072,7 @@ public class Fft
 			DrawR = R / 2;
 			LastDrawR = DrawR;
 		}
-		else
-		if(R > DrawR)
+		else if(R > DrawR)
 		{
 			DrawRRate = (R - DrawR) / 4;
 			DrawR += DrawRRate;
