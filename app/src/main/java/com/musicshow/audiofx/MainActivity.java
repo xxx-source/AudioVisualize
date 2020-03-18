@@ -339,7 +339,7 @@ public class MainActivity extends android.app.Activity implements android.view.V
 		{
 			for (int Index = 0; Index < GrantResults.length; Index++)
 			{
-				if(GrantResults[Index] == android.content.pm.PackageManager.PERMISSION_DENIED && !Permissions[Index].equals(android.Manifest.permission.SYSTEM_ALERT_WINDOW))
+				if(GrantResults[Index] == android.content.pm.PackageManager.PERMISSION_DENIED && Permissions[Index] != null && !Permissions[Index].equals(android.Manifest.permission.SYSTEM_ALERT_WINDOW))
 					android.widget.Toast.makeText(MainActivity.this, "有以下权限还未授权：" + Permissions[Index], 0).show();
 			}
 			if(CreateScreen == -1)
